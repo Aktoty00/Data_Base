@@ -6,15 +6,12 @@ CREATE TABLE countries(
   region_id INTEGER ,
   population INTEGER DEFAULT 0
 );
-INSERT INTO countries VALUES ( 1,'ALMATY', 02, 1806833);
-INSERT INTO countries (country_id, country_name) VALUES (3, 'AKTOBE');
-INSERT INTO countries (country_id, country_name) VALUES (DEFAULT , 'KARAGANDA');
-INSERT INTO countries (country_id, country_name,population) VALUES (DEFAULT , 'AKTOBE', 86950);
-INSERT INTO countries (country_id, region_id) VALUES (DEFAULT ,NULL);
-INSERT INTO countries VALUES (DEFAULT , 'AKTAU',12, 500000 ),
-                             (DEFAULT , 'URALSK', 07, 600000),
-                             (DEFAULT , 'SEMEY', 16, 458000);
-DELETE FROM countries WHERE country_id>7;
+INSERT INTO countries VALUES ( 1, 'USA', 51, 80000000);
+INSERT INTO countries (country_name, country_id) VALUES ('CHINA', 49);
+INSERT INTO countries (region_id) VALUES (NULL);
+INSERT INTO countries VALUES (DEFAULT , 'UK', 54, 42000000),
+                             (DEFAULT , 'RUSSIA', 460, 76000000),
+                             (DEFAULT , 'SINGAPORE', 888, 67000000);
 ALTER TABLE ONLY countries ALTER COLUMN country_name SET DEFAULT 'KAZAKHSTAN';
 INSERT INTO countries (country_name) VALUES (DEFAULT );
 INSERT INTO countries DEFAULT VALUES ;
@@ -30,4 +27,3 @@ DELETE FROM countries RETURNING *;
 
 SELECT * FROM countries;
 SELECT * FROM countries_new;
-
